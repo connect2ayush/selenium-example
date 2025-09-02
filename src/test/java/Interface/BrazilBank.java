@@ -1,4 +1,4 @@
-package javaPracticeOops;
+package Interface;
 
 public interface BrazilBank {
 

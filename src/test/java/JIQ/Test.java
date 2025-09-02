@@ -5,26 +5,56 @@ import java.util.Map;
 
 public class Test {
 
-    public static void charCount(String str) {
+    // Instance variables
+    String color;
+    int wheels;
+    Map<String, String> config;
 
-        HashMap<Character, Integer> map = new HashMap<>();
-        char[] ch = str.toCharArray();
+    // 1️⃣ Default constructor
+    public Test() {
+        this("Red", 4); // Call parameterized constructor from default
+        System.out.println("Default constructor is called");
+    }
 
-        for (char c : ch) {
-            map.put(c, map.getOrDefault(c, 0 + 1));
-        }
+    // 2️⃣ Parameterized constructor with one argument
+    public Test(String color) {
+        this.color = color;
+        this.wheels = 4; // default value
+        System.out.println("One-parameter constructor is called");
+    }
 
-        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
+    // 3️⃣ Parameterized constructor with two arguments
+    public Test(String color, int wheels) {
+        this.color = color;
+        this.wheels = wheels;
+        this.config = new HashMap<>();
+        config.put("engine", "petrol");
+        config.put("transmission", "manual");
+        System.out.println("Two-parameter constructor is called");
+    }
 
+    // 4️⃣ Method to display object state
+    public void displayInfo() {
+        System.out.println("Vehicle color: " + color);
+        System.out.println("Wheels: " + wheels);
+        System.out.println("Configuration: " + config);
     }
 
     public static void main(String[] args) {
+        // ➤ Creating object using default constructor
+        Test t1 = new Test();
+        t1.displayInfo();
 
-        String s = "Ayush Sharma";
-        charCount(s);
+        System.out.println("-----------------------------");
 
+        // ➤ Creating object using one-parameter constructor
+        Test t2 = new Test("Blue");
+        t2.displayInfo();
+
+        System.out.println("-----------------------------");
+
+        // ➤ Creating object using two-parameter constructor
+        Test t3 = new Test("Black", 2);
+        t3.displayInfo();
     }
-
 }
