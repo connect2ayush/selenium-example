@@ -1,4 +1,4 @@
-package JIQ;
+package Collections;
 
 import java.util.HashMap;
 import java.util.Map;
